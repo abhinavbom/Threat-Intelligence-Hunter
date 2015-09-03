@@ -7,7 +7,7 @@ import argparse
 import os
 import sys
 
-banner = ''' The OSINT framework Begins now '''
+banner = ''' Threat Intelligence Hunter framework Begins now '''
 
 print banner
 
