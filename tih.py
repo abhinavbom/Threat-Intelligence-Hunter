@@ -14,7 +14,7 @@ print banner
 def main():
     print "Intel test"
     parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
-    parser.add_argument("-ip", type=str,  help="Enter the IP address to search through the list of feeds")
+    parser.add_argument("-ip", type=str,  help="Enter the IP address to search through the list of feed")
 
     args = parser.parse_args()
     if args.ip:
