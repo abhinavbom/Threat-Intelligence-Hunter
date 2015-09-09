@@ -52,7 +52,7 @@ def parse_ip(ip):
                             pass
                     else:
                         ioc_list.append(ip)
-                        
-                        
-    print "Matched IP", ioc_list, "under following source", source
+
+
+    # print "Matched IP", ioc_list, "under following source", source
     print "Total scanned indicators",counter
