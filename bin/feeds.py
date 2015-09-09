@@ -1,6 +1,4 @@
-import re
-import os
-import sys
+__author__ = '@abhinavbom a.k.a Darkl0rd'
 
 #List of known IPs from various sources
 

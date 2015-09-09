@@ -1,11 +1,10 @@
+__author__ = '@abhinavbom a.k.a Darkl0rd'
+
 #local imports
-from bin.feeds import *
 from bin.parse import *
 
 #stdlib imports
 import argparse
-import os
-import sys
 
 banner = ''' Threat Intelligence Hunter framework Begins now '''
 
