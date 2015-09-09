@@ -80,8 +80,7 @@ OSINT = {
     "Nothink.org IRC bot IPs": nothink_irc,
     "Nothink.org SSH bruteforce IPs": nothink_ssh,
     "TOR Exit node IP": tor_exit_nodes,
-    "Korean & Chinese Spam IP feed": korean_ip,
-
+    "Korean & Chinese Spam IP feed": korean_ip
 }
 
 
