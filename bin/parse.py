@@ -2,8 +2,6 @@
 from bin.feeds import *
 
 #stdlib import
-import urllib2
-import os
 import sys
 import requests
 
@@ -30,28 +28,29 @@ def create_basic_headers():
     return headers
 # parse function calls feeds.sources and traverses each of them to look for the input vector.
 
-def connect():
-    for filename, source in OSINT.iteritems():
-        sessions = requests.Session()
-        r = sessions.get(source,
-                         headers = create_basic_headers(),
-                         proxies = {'http': HTTP_PROXY, 'https': HTTPS_PROXY})
-        print "Checking %s " %filename
 
 def parse_ip(ip):
     counter = 0
     ioc_list = []
-    r = connect()
-    for line in r:
-        if line.startswith("/") or line.startswith('\n') or line.startswith("#"):
-            pass
-        else:
-            if ip in line:
-
-                for list in ip:
-                    if list in ioc_list:
-                        pass
-                else:
-                    ioc_list.append(ip)
-                    print ioc_list , source
-                    counter += 1
+    for filename, source in OSINT.iteritems():
+        sessions = requests.Session()
+        print "Now connecting with", source
+        try:
+            r = sessions.get(source,
+                            headers = create_basic_headers(),
+                            proxies = {'http': HTTP_PROXY, 'https': HTTPS_PROXY})
+        except:
+            sys.stdout.write('[!] Could not connect to: %s\n' % source)
+        for line in r:
+            if line.startswith("/") or line.startswith('\n') or line.startswith("#"):
+                pass
+            else:
+                counter += 1
+                if ip in line:
+                    for list in ip:
+                        if list in ioc_list:
+                            pass
+                    else:
+                        ioc_list.append(ip)
+                        print ioc_list, source
+    print "Total scanned indicators",counter
