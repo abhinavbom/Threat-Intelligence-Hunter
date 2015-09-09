@@ -1,3 +1,5 @@
+__author__ = '@abhinavbom a.k.a Darkl0rd'
+
 #local import
 from bin.feeds import *
 
@@ -14,7 +16,7 @@ if DEBUG:
     HTTPS_PROXY = '127.0.0.1:443'
 # Add your own proxy server to pass traffic through it
 else:
-    HTTP_PROXY = 'http://proxy.jpmchase.net:8443'             #Enter your proxy address
+    HTTP_PROXY = ''  # Enter your proxy address
     HTTPS_PROXY = HTTP_PROXY    #enter HTTPS proxy address(remove the assigned HTTPS_PROXY variable)
 
 USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
@@ -46,13 +48,11 @@ def parse_ip(ip):
                 pass
             else:
                 counter += 1
-                if ip in line:
-                    for list in ip:
-                        if list in ioc_list:
-                            pass
-                    else:
-                        ioc_list.append(ip)
+                c = 0
+                while c < len(ip):
+                    if ip[c] in line:
+                        print ip[c], source
 
+                    c +=1
 
-    # print "Matched IP", ioc_list, "under following source", source
-    print "Total scanned indicators",counter
+    print "Total scanned indicators", counter
