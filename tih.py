@@ -19,6 +19,8 @@ def main():
     if args.ip:
         ip_ioc = parse_ip(args.ip)
         print ip_ioc
+    if args.list:
+        parse_ipList(list)
 
 if __name__ == '__main__':
     main()
