@@ -16,7 +16,7 @@ if DEBUG:
     HTTPS_PROXY = '127.0.0.1:443'
 # Add your own proxy server to pass traffic through it
 else:
-    HTTP_PROXY = ''  # Enter your proxy address
+    HTTP_PROXY = 'http://proxy.jpmchase.net:8443'  # Enter your proxy address
     HTTPS_PROXY = HTTP_PROXY    #enter HTTPS proxy address(remove the assigned HTTPS_PROXY variable)
 
 USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
@@ -30,29 +30,32 @@ def create_basic_headers():
     return headers
 # parse function calls feeds.sources and traverses each of them to look for the input vector.
 
+def connect(url):
+    print "Connecting with", url
+    try:
+        r = requests.get(url,
+                        headers = create_basic_headers(),
+                        proxies = {'http': HTTP_PROXY, 'https': HTTPS_PROXY})
+        return r
+    except Exception as exc:
+        sys.stdout.write('[!] Could not connect to: %s\n' % url)
+#        sys.stdout.write('Exception: %s' % exc)
 
 def parse_ip(ip):
     counter = 0
     ioc_list = []
     for filename, source in OSINT.iteritems():
-        sessions = requests.Session()
-        print "Connecting with", source
-        try:
-            r = sessions.get(source,
-                            headers = create_basic_headers(),
-                            proxies = {'http': HTTP_PROXY, 'https': HTTPS_PROXY})
-        except:
-            sys.stdout.write('[!] Could not connect to: %s\n' % source)
-        for line in r:
+        c = connect(source)
+        for line in c:
             if line.startswith("/") or line.startswith('\n') or line.startswith("#"):
                 pass
             else:
                 counter += 1
-                c = 0
-                while c < len(ip):
-                    if ip[c] in line:
-                        print ip[c], source
+                d = 0
+                while d < len(ip):
+                    if ip[d] in line:
+                        print ip[d], source
 
-                    c +=1
+                    d +=1
 
     print "Total scanned indicators", counter
