@@ -16,7 +16,7 @@ openBL = "http://www.openbl.org/lists/base.txt"
 honeypot_ip = "http://www.projecthoneypot.org/list_of_ips.php?rss=1"
 
 #SANS Institute
-sans_ip = "https://isc.sans.edu/ipsascii.html"
+sans_ip = "https://isc.sans.edu/ipsascii.html?limit=2000"
 
 #Blocklist.de
 block_list = "http://www.blocklist.de/lists/all.txt"
