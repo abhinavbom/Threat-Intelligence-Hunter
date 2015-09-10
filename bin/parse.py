@@ -16,7 +16,7 @@ if DEBUG:
     HTTPS_PROXY = '127.0.0.1:443'
 # Add your own proxy server to pass traffic through it
 else:
-    HTTP_PROXY = ''  # Enter your proxy address
+    HTTP_PROXY = 'http://proxy.jpmchase.net:8443'  # Enter your proxy address
     HTTPS_PROXY = HTTP_PROXY    #enter HTTPS proxy address(remove the assigned HTTPS_PROXY variable)
 
 USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
@@ -57,5 +57,23 @@ def parse_ip(ip):
                         print ip[d], source
 
                     d +=1
+
+    print "Total scanned indicators", counter
+
+
+def parse_ipList(list):
+    counter = 0
+    ioc_list = []
+    for filename, source in OSINT.iteritems():
+        c = connect(source)
+        list = open("items.txt", "r")
+        for items in list.readlines():
+            for line in c:
+                if line.startswith("/") or line.startswith('\n') or line.startswith("#"):
+                    pass
+                else:
+                    counter += 1
+                    if items in line:
+                        print items, filename
 
     print "Total scanned indicators", counter
