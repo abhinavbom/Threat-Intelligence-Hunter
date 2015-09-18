@@ -1,3 +1,5 @@
+__author__ = '@abhinavbom a.k.a Darkl0rd'
+
 #stdlib imports
 
 import json
