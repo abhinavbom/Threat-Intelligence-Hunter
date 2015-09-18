@@ -10,7 +10,7 @@ import requests
 from bin.parse import *
 
 #Add your public API key before starting.
-api = '100e582a15884a9c5cc37e298766065695e551fb1fc88ee05eadc85eacc3b61e'
+api = ''
 base = 'https://www.virustotal.com/vtapi/v2/'
 if api == '':
     print "No API key provided. Please add your VirusTotal public API key to /bin/md5vt.py"
