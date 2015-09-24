@@ -10,7 +10,7 @@ import requests
 from bin.parse import *
 
 #Add your public API key before starting.
-api = ''
+api = '100e582a15884a9c5cc37e298766065695e551fb1fc88ee05eadc85eacc3b61e'
 base = 'https://www.virustotal.com/vtapi/v2/'
 if api == '':
     print "No API key provided. Please add your VirusTotal public API key to /bin/md5vt.py"
@@ -85,5 +85,15 @@ def vt_url(url2search):
                         proxies={'http': HTTP_PROXY, 'https': HTTPS_PROXY},
                         params=param)
         data = r.json()
-        print data
-        
+        #print data
+        if data['response_code'] == 0:
+            print url2search + "---Not found in VT"
+        elif data['response_code'] == -1:
+            print "Invalid IP address"
+        #print data
+        elif data['response_code'] == 1:
+            print "Scanned VT url: ", data['permalink']
+            print "\n Detection ratio", data['positives'], "/", data['total']
+
+        c+=1
+
