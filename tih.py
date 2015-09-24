@@ -22,6 +22,7 @@ def main():
     if args.ip:
         if len(args.ip) > 4:
             print "Too many argument values specified. Maximum arguments per minute is 4."
+            sys.exit(1)
         parse_ip(args.ip)
         vt_ip(args.ip)
     if args.list:
@@ -29,10 +30,12 @@ def main():
     if args.md5:
         if len(args.md5) > 4:
             print "Too many argument values specified. Maximum arguments per minute is 4."
+            sys.exit(1)
         vt_md5(args.md5)
     if args.url:
         if len(args.url) > 4:
             print "Too many argument values specified. Maximum arguments per minute is 4."
+            sys.exit(1)
         vt_url(args.url)
 
 if __name__ == '__main__':
