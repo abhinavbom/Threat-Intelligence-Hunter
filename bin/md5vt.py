@@ -1,5 +1,3 @@
-__author__ = '@abhinavbom a.k.a Darkl0rd'
-
 #stdlib imports
 
 import json
@@ -72,3 +70,20 @@ def vt_ip(ip):
                 print "Country: ", data['country']
         c+=1
 
+
+def vt_url(url2search):
+    c=0
+    url = base + "url/report"
+    #data = urllib.urlencode(param)
+    #result = urllib2.urlopen(url,data)
+    print "Connecting to Virustotal"
+    while c < len(url2search):
+        print "looking for URL", url2search[c]
+        param = {'resource':url2search[c],'apikey':api}
+        r = requests.get(url,
+                        headers=create_basic_headers(),
+                        proxies={'http': HTTP_PROXY, 'https': HTTPS_PROXY},
+                        params=param)
+        data = r.json()
+        print data
+        
