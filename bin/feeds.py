@@ -56,7 +56,7 @@ tor_exit_nodes = "https://check.torproject.org/exit-addresses"
 
 korean_ip = "http://www.okean.com/korea.txt"
 
-OSINT = {
+OSINT_IP = {
     "Emerging Threat Compromised IP Feed": emerging_threat_compromisedIP,
     "Emerging Threat Blocked IP feed": emerging_threat_blockedIP,
     "Emerging Threat Russian Business Network IP feed": emerging_threat_russian_IP,
