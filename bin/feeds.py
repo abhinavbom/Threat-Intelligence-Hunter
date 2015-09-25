@@ -56,6 +56,13 @@ tor_exit_nodes = "https://check.torproject.org/exit-addresses"
 
 korean_ip = "http://www.okean.com/korea.txt"
 
+#Bad IPs listr for last 1000 hours
+bad_ip = "http://www.badips.com/get/list/apache-wordpress/0?age=1000h"
+
+###List of Domains goes here ###
+#Open-phish
+open_pish =  "https://openphish.com/feed.txt"
+
 OSINT_IP = {
     "Emerging Threat Compromised IP Feed": emerging_threat_compromisedIP,
     "Emerging Threat Blocked IP feed": emerging_threat_blockedIP,
@@ -78,7 +85,11 @@ OSINT_IP = {
     "Nothink.org IRC bot IPs": nothink_irc,
     "Nothink.org SSH bruteforce IPs": nothink_ssh,
     "TOR Exit node IP": tor_exit_nodes,
-    "Korean & Chinese Spam IP feed": korean_ip
+    "Korean & Chinese Spam IP feed": korean_ip,
+    "Bad-IPs DB for last 1000 hours": bad_ip
 }
 
+OSINT_URL = {
+    "Open Phish DB for Phishing Websites": open_pish,
 
+}
