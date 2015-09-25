@@ -16,7 +16,7 @@ if DEBUG:
     HTTPS_PROXY = '127.0.0.1:443'
 # Add your own proxy server to pass traffic through it
 else:
-    HTTP_PROXY = ''  # Enter your proxy address
+    HTTP_PROXY = 'http://proxy.jpmchase.net:8443'  # Enter your proxy address
     HTTPS_PROXY = HTTP_PROXY    #enter HTTPS proxy address(remove the assigned HTTPS_PROXY variable)
 
 USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
@@ -30,12 +30,17 @@ def create_basic_headers():
     return headers
 # parse function calls feeds.sources and traverses each of them to look for the input vector.
 
-def connect(url):
+def url_param():
+    params={}
+    return params
+
+def connect(url,params):
     print "Connecting with", url
     try:
         r = requests.get(url,
                         headers = create_basic_headers(),
-                        proxies = {'http': HTTP_PROXY, 'https': HTTPS_PROXY})
+                        proxies = {'http': HTTP_PROXY, 'https': HTTPS_PROXY},
+                        params=url_param())
         return r
     except Exception as exc:
         sys.stdout.write('[!] Could not connect to: %s\n' % url)
@@ -44,8 +49,8 @@ def connect(url):
 def parse_ip(ip):
     counter = 0
     ioc_list = []
-    for filename, source in OSINT.iteritems():
-        c = connect(source)
+    for filename, source in OSINT_IP.iteritems():
+        c = connect(source,params=url_param())
         for line in c:
             if line.startswith("/") or line.startswith('\n') or line.startswith("#"):
                 pass
@@ -64,7 +69,7 @@ def parse_ip(ip):
 def parse_ipList(list):
     counter = 0
     ioc_list = []
-    for filename, source in OSINT.iteritems():
+    for filename, source in OSINT_ip.iteritems():
         c = connect(source)
         list = open("items.txt", "r")
         for items in list.readlines():
