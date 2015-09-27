@@ -1,3 +1,5 @@
+A threat intelligence platform.
+
 <h2> Threat-Intelligence-Hunter</h2>
 
 <b><i>Upcoming Version -></b></i> <b>Rita Skeeter v0.6</b>
