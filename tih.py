@@ -2,7 +2,7 @@ __author__ = '@abhinavbom a.k.a Darkl0rd'
 
 #local imports
 from bin.parse import *
-from bin.md5vt import *
+from lib.vt import *
 
 #stdlib imports
 import argparse
