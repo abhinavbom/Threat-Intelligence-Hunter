@@ -6,7 +6,7 @@ import urllib2
 from xml.dom import minidom
 from urllib import quote
 
-from bin.parse import *
+from lib.parse import *
 
 # Base API URL
 base_url = 'http://api.urlvoid.com/'
@@ -43,5 +43,3 @@ def urlvoid(url):
         #    print detections.attrib
         #print resp
         c+=1
-
-
