@@ -1,1 +1,6 @@
 #API support
+
+vt.py -> Virustotal. Requires Public API key.
+
+urlvoid.py -> Urlvoid.com. Requires API key that can be obtained from api.urlvoid.com
+
