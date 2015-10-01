@@ -2,7 +2,7 @@
 
 #local imports
 
-from bin.parse import *
+from lib.parse import *
 
 #Add your public API key before starting.
 api = ''
