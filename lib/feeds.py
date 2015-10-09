@@ -1,6 +1,6 @@
 __author__ = '@abhinavbom a.k.a Darkl0rd'
 
-#List of known IPs from various sources
+###List of known IPs from various sources###
 
 #Emerging Threats Community
 
@@ -60,8 +60,16 @@ korean_ip = "http://www.okean.com/korea.txt"
 bad_ip = "http://www.badips.com/get/list/apache-wordpress/0?age=1000h"
 
 ###List of Domains goes here ###
+
 #Open-phish
 open_pish =  "https://openphish.com/feed.txt"
+
+#Joewein Blacklist
+joewein_domains = 'http://www.joewein.net/dl/bl/dom-bl.txt'
+
+###Ocasionally updated feeds for Email blacklisting###
+#Joewein Blacklist
+joewein_email = 'http://www.joewein.net/dl/bl/from-bl.txt'
 
 OSINT_IP = {
     "Emerging Threat Compromised IP Feed": emerging_threat_compromisedIP,
@@ -91,5 +99,10 @@ OSINT_IP = {
 
 OSINT_URL = {
     "Open Phish DB for Phishing Websites": open_pish,
+    "Joe Wein domain blacklist": joewein_domains
 
+}
+
+OSINT_EMAIL = {
+    "Joe Wein Email blacklist": joewein_email
 }
