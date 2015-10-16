@@ -4,6 +4,7 @@ __author__ = '@abhinavbom a.k.a Darkl0rd'
 from lib.parse import *
 from api.vt import *
 from api.urlvoid import *
+from lib.updatefeed import *
 
 #stdlib imports
 import argparse
@@ -30,6 +31,7 @@ def main():
     parser.add_argument('-repo', type=str, nargs='?', help="Search for the reputation of a list of URLs. The script"
                                                            "accepts a txt file containing list of domains and searches it"
                                                            "against popular reputation tools like URLVoid, Bluecoat etc.")
+    parser.add_argument('-update', type=str, nargs='?', help='Update the local storage of feeds data.')
     args = parser.parse_args()
     if args.ip:
         if len(args.ip) > 4:
@@ -51,6 +53,8 @@ def main():
         vt_url(args.url)
     if args.repo:
         urlvoid(args.repo)
+    if args.update:
+        gather(args.update)
 
 if __name__ == '__main__':
     main()

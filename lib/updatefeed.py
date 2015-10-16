@@ -12,7 +12,8 @@ if not os.path.exists('intel'):
 
 
 
-def gather():
+def gather(self):
+    print "Starting feed update process"
     counter = 0
     ioc_list = []
     timestr = time.strftime("%Y%m%d-%H%M%S")
