@@ -1,7 +1,7 @@
 __author__ = '@abhinavbom a.k.a Darkl0rd'
 
 #local import
-from bin.feeds import *
+from lib.feeds import *
 
 #stdlib import
 import sys
