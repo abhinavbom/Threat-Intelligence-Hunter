@@ -5,11 +5,12 @@ The idea behind the tool is to facilitate searching and storing of frequently ad
 
 
 <b><i>Upcoming Version -></b></i> 
-
+<b><i>Peter Pettigrew</b></i>
+This version will will support local storage of feeds.
 
 <b><i>Current version -> </b></i>
 <b>Rita Skeeter v0.6</b>
-This version will have support for domain and emails as indicators. 
+This version will have support for domains as indicators. 
 
 <b><i>Previous versions -> </b></i>
 <b>Lucious Malfoy V0.4</b>
