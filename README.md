@@ -13,7 +13,7 @@ This version will have support for domain and emails as indicators.
 
 <b><i>Previous versions -> </b></i>
 <b>Lucious Malfoy V0.4</b>
-This version will have support for MD5 as Commandline input as well as a list inside a TXT file.
+<p>This version will have support for MD5 as Commandline input as well as a list inside a TXT file.</p>
 <b>Draco Malfoy V0.2.</b>
 Now supports a list of IP addresses as indicators.
 Supports Single or multiple IPs as commandline arguments and parses it against a list of indicators
