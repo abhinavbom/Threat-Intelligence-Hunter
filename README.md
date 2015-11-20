@@ -6,7 +6,7 @@ The idea behind the tool is to facilitate searching and storing of frequently ad
 
 <b><i>Upcoming Version -></b></i> 
 <b><i>Peter Pettigrew</b></i>
-This version will will support local storage of feeds.
+This version will will support local storage of feeds
 
 <b><i>Current version -> </b></i>
 <b>Rita Skeeter v0.6</b>
