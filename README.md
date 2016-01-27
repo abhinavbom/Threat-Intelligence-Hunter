@@ -1,3 +1,5 @@
+TIH is an intelligence tool that helps you in searching for IOCs across multiple openly available security feeds and some well known APIs. The idea behind the tool is to facilitate searching and storing of frequently added IOCs for creating your own set of indicators.
+
 #Threat-Intelligence-Hunter
 
 TIH is an intelligence tool that helps you in searching for IOCs across multiple openly available security feeds and some well known APIs. 
