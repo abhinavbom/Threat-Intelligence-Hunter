@@ -30,6 +30,27 @@ def create_basic_headers():
     return headers
 # parse function calls feeds.sources and traverses each of them to look for the input vector.
 
+def regex(ioc_type):
+    ioc_patts = {
+        "ip":"((?:(?:[12]\d?\d?|[1-9]\d|[1-9])(?:\[\.\]|\.)){3}(?:[12]\d?\d?|[\d+]{1,2}))",
+        "domain":"([A-Za-z0-9]+(?:[\-|\.][A-Za-z0-9]+)*(?:\[\.\]|\.)(?:com|net|edu|ru|org|de|uk|jp|br|pl|info|fr|it|cn|in|su|pw|biz|co|eu|nl|kr|me))",
+        "md5":"\W([A-Fa-f0-9]{32})(?:\W|$)",
+        "sha1":"\W([A-Fa-f0-9]{40})(?:\W|$)",
+        "sha256":"\W([A-Fa-f0-9]{64})(?:\W|$)",
+        "email":"[a-zA-Z0-9_]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?!([a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.))(?:[A-Za-z0-9](?:[a-zA-Z0-9-]*[A-Za-z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?",
+        "URL":"((?:http|ftp|https)\:\/\/(?:[\w+?\.\w+])+[a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;]+)",
+    }
+
+    try:
+        pattern = re.compile(ioc_patts[ioc_type])
+    except re.error:
+        print '[!] Invalid type specified.'
+        sys.exit(0)
+
+    return pattern
+
+
+
 def url_param():
     params={}
     return params
@@ -43,7 +64,7 @@ def connect(url,params):
                         params=url_param())
         return r
     except Exception as exc:
-        sys.stdout.write('[!] Could not connect to: %s\n' % url)
+        sys.stdout.write('[!] Could not connect to: %s\n' %url)
 #        sys.stdout.write('Exception: %s' % exc)
 
 def parse_ip(ip):
