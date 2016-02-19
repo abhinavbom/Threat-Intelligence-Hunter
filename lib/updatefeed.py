@@ -11,18 +11,22 @@ from lib.parse import *
 def gather():
     if not os.path.exists('intel'):
         os.mkdir('intel')
+    os.chdir('.\\intel')
+    #print os.getcwd()
     print "Starting feed update process"
     counter = 0
     ioc_list = []
     timestr = time.strftime("%Y%m%d-%H%M%S")
-    print type(timestr)
     for source in OSINT_IP.iteritems():
-        print type(source)
+        if not os.path.exists(str(source[0])):
+            os.mkdir(str(source[0]))
+        print os.getcwd()
+        os.chdir(str(source[0]))
         print source[0]
-        name = str(source[0]) +"_" + timestr
+        name = str(source[0]) +"_" + timestr + ".txt"
         print name
         print "Starting feed update process-2"
-        file = open(name, 'w+')
+        file = open(name, 'a+')
         r = requests.get(str(source[1]),
                         headers=create_basic_headers(),
                         proxies={'http': HTTP_PROXY, 'https': HTTPS_PROXY})
@@ -31,3 +35,4 @@ def gather():
                 pass
             else:
                 file.write(line+'\n')
+        os.chdir("..")
