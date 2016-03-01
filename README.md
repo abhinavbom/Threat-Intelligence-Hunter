@@ -18,8 +18,8 @@ The idea behind the tool is to facilitate searching and storing of frequently ad
 
 <b>Rita Skeeter v0.6</b>
 <p>This version will have support for domains as indicators. </p>
-<b>Lucious Malfoy V0.4</b>
+<b>Lucious Malfoy v0.4</b>
 <p>This version will have support for MD5 as Commandline input as well as a list inside a TXT file.</p>
-<b>Draco Malfoy V0.2.</b>
+<b>Draco Malfoy v0.2.</b>
 <p>Now supports a list of IP addresses as indicators.
 Supports Single or multiple IPs as commandline arguments and parses it against a list of indicators.</p>
