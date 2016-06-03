@@ -3,6 +3,8 @@ TIH is an intelligence tool that helps you in searching for IOCs across multiple
 #Threat-Intelligence-Hunter
 
 [![Build Status](https://travis-ci.org/abhinavbom/Threat-Intelligence-Hunter.svg?branch=master)](https://travis-ci.org/abhinavbom/Threat-Intelligence-Hunter)
+[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&maxAge=2592000)](https://www.twitter.com/abhinavbom/)
+[![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg?maxAge=2592000)](https://github.com/abhinavbom/Threat-Intelligence-Hunter/blob/master/LICENSE)
 
 
 ####Summary
