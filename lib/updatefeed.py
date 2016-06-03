@@ -25,7 +25,7 @@ def gather():
         print source[0]
         name = str(source[0]) +"_" + timestr + ".txt"
         print name
-        print "Starting feed update process-2"
+        print "Building database"
         file = open(name, 'a+')
         r = requests.get(str(source[1]),
                         headers=create_basic_headers(),
