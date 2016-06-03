@@ -16,10 +16,11 @@ print banner
 def main():
     print "Intel test"
     parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
-    parser.add_argument('-ip', type=str, nargs='+', help="Search for a single IP through OSINT threat feeds")
-    
+    parser.add_argument('-ip', type=str, nargs='+', help="Search for a"
+                                                         "single IP through OSINT threat feeds")
+
     parser.add_argument('-list', type=str, nargs='?', help="Search for a list of IP vectors. Accepted formats is .txt")
-    
+
     parser.add_argument('-md5', type=str, nargs='+', help="Search for a single of space separated multiple MD5s. "
                                                           "This search is performed on Virustotal hence only 4 searches "
                                                           "per minute is allowed. Please add your public key to bin/vt.py")
