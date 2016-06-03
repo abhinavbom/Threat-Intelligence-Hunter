@@ -15,37 +15,37 @@ Requirements
 
 Features
 ----
-*Local storage of threat feeds
+* Local storage of threat feeds
 
 This allows you to regularly update your local storage from listed feeds under feeds.py. You can add your own favourite list if it is missing from the list. 
 ```
 python tih.py -update
 ```
 
-*check an IP against existing threat feeds and your local database
+* Check an IP against existing threat feeds and your local database
 
 ```
 python tih.py -ip <IP Address to lookup>
 ```
-*check for Bulk IP address list(in a text file)
+* check for Bulk IP address list(in a text file)
 
 ```
 python tih.py -list <file.txt>
 ```
 
-*Check for MD5 Hash
+* Check for MD5 Hash
 
 ```
 python tih.py -md5 <hash>
 ```
 
-*Check URL for blacklisting
+* Check URL for blacklisting
 
 ```
 python tih.py -url <your_url>
 ```
 
-*Check for IP/URL reputation (Currently supports URLVoid and Virustotal)
+* Check for IP/URL reputation (Currently supports URLVoid and Virustotal)
 Before using this feature, make sure you have added your public keys for URLVoid and VT to ```urlvoid.py``` and ```vt.py``` respectively.
 
 ```
