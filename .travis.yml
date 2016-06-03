@@ -6,4 +6,4 @@ install:
         - pip install -r requirements.txt
 
 script:
-        python tih.py
+        - python tih.py
