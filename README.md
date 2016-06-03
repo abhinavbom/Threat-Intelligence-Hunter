@@ -12,9 +12,14 @@ Requirements
 ----
 * Python 2.7
 * Argparse
-* Urllib2
-* Re
+* Requests
 * API keys from Virustotal and URLVoid
+
+you can run the following command to install all the required packages in a go.
+
+```
+pip install -r requirements.txt
+```
 
 Features
 ----
