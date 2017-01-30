@@ -5,7 +5,7 @@
 from lib.parse import *
 
 #Add your public API key before starting.
-api = ''
+api = 'd'
 base = 'https://www.virustotal.com/vtapi/v2/'
 if api == '':
     print "No API key provided. Please add your VirusTotal public API key to /bin/md5vt.py"
