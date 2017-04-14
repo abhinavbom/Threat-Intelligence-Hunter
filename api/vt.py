@@ -7,7 +7,7 @@ from lib.parse import *
 #Add your public API key before starting.
 api = 'd'
 base = 'https://www.virustotal.com/vtapi/v2/'
-if api == 'd':
+if api == '':
     print "No API key provided. Please add your VirusTotal public API key to vt.py"
     sys.exit(1)
 
