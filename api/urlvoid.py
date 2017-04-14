@@ -12,7 +12,10 @@ from lib.parse import *
 base_url = 'http://api.urlvoid.com/'
 
 # API Key . Key can be obtained from api.urlvoid.com
-api_key = ''+'/'
+api_key = '<Add API key Here>'+'/'
+if api_key == '<Add API key Here>/':
+    print "Please add your Urlvoid API key"
+    sys.exit()
 
 # plan identifier. change this value as per your plan in URLvoid. Free plans are designated by api1000 which is the
 #default value here.
@@ -28,7 +31,7 @@ def urlvoid(url):
     while c < len(url):
         print url[c]
         final_url = base_url+plan+api_key+detect+url[c]
-        print final_url
+        #print final_url
         if HTTP_PROXY or HTTPS_PROXY:
             proxy = urllib2.ProxyHandler({'http': HTTP_PROXY, 'https': HTTPS_PROXY})
             opener = urllib2.build_opener(proxy)
