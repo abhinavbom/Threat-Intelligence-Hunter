@@ -23,14 +23,14 @@ def main():
 
     parser.add_argument('-md5', type=str, nargs='+', help="Search for a single of space separated multiple MD5s. "
                                                           "This search is performed on Virustotal hence only 4 searches "
-                                                          "per minute is allowed. Please add your public key to bin/vt.py")
+                                                          "per minute is allowed. Please add your public key to vt.py")
 
     parser.add_argument('-url', type=str, nargs='+', help="Search for a single of space separated multiple urls. "
                                                           "This search is performed on Virustotal hence only 4 searches "
                                                           "per minute is allowed. Please add your public key to bin/vt.py")
 
-    parser.add_argument('-repo', type=str, nargs='?', help="Search for the reputation of a list of URLs. The script"
-                                                           "accepts a txt file containing list of domains and searches it"
+    parser.add_argument('-repo', type=str, nargs='+', help="Search for the reputation of a list of URLs. The script"
+                                                           "accepts comma separated list of domains or IPs and searches it"
                                                            "against popular reputation tools like URLVoid, Bluecoat etc.")
     parser.add_argument('-update', action='store_true', help='Update the local storage of feeds data.')
     args = parser.parse_args()
