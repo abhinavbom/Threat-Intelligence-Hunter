@@ -26,13 +26,16 @@ def urlvoid(url):
     c=0
     print "Conneting to URLVoid"
     while c < len(url):
-        #print url[c]
+        print url[c]
         final_url = base_url+plan+api_key+detect+url[c]
-        proxy = urllib2.ProxyHandler({'http': HTTP_PROXY, 'https': HTTPS_PROXY})
-        opener = urllib2.build_opener(proxy)
-        urllib2.install_opener(opener)
+        print final_url
+        if HTTP_PROXY or HTTPS_PROXY:
+            proxy = urllib2.ProxyHandler({'http': HTTP_PROXY, 'https': HTTPS_PROXY})
+            opener = urllib2.build_opener(proxy)
+            urllib2.install_opener(opener)
         req = urllib2.urlopen(final_url)
         resp = req.read()
+        print resp
         tree = minidom.parseString(resp)
         print tree
         obs_value = tree.getElementsByTagName('detections')
