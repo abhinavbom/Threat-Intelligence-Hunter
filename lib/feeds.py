@@ -9,8 +9,6 @@ emerging_threat_blockedIP = "http://rules.emergingthreats.net/fwrules/emerging-B
 emerging_threat_russian_IP = "http://doc.emergingthreats.net/pub/Main/RussianBusinessNetwork/RussianBusinessNetworkIPs.txt"
 emerging_threat_malvertisers = "http://doc.emergingthreats.net/pub/Main/RussianBusinessNetwork/emerging-rbn-malvertisers.txt"
 
-#OpenBL Project
-openBL = "http://www.openbl.org/lists/base.txt"
 
 #Project Honeynet
 honeypot_ip = "http://www.projecthoneypot.org/list_of_ips.php?rss=1"
@@ -26,10 +24,6 @@ alien = "https://reputation.alienvault.com/reputation.generic"
 
 #Abuse.ch zeus tracker
 zeus_tracker = "https://zeustracker.abuse.ch/blocklist.php?download=ipblocklist"
-
-#Team-Cymru Dragon Research Group
-vncprobe_ip = "https://www.dragonresearchgroup.org/insight/vncprobe.txt"
-ssh_ip = "https://www.dragonresearchgroup.org/insight/sshpwauth.txt"
 
 #Malc0de Blacklist IPs
 malcode_ip = "http://malc0de.com/bl/IP_Blacklist.txt"
@@ -76,14 +70,11 @@ OSINT_IP = {
     "Emerging Threat Blocked IP feed": emerging_threat_blockedIP,
     "Emerging Threat Russian Business Network IP feed": emerging_threat_russian_IP,
     "Emerging threat Malvertisement Network": emerging_threat_malvertisers,
-    "Open BlackList Project feed": openBL,
     "Project HoneyNet IP feed": honeypot_ip,
     "SANS IP feed": sans_ip,
     "BlockList.de IP feed": block_list,
     "AlienVault IP reputation feed": alien,
     "Abuse.ch Zeus Tracker IP feed": zeus_tracker,
-    "Dragon Research Group VNC probe IP feed": vncprobe_ip,
-    "Dragon Research Group SSH bruteforce IP feed": ssh_ip,
     "Malc0de Blacklist IP feed": malcode_ip,
     "Malware Domain List C&C IPs": mdl_ip,
     "Talos Blacklist IP feed": talos_ip,
