@@ -80,7 +80,9 @@ def parse_ip(ip):
                 d = 0
                 while d < len(ip):
                     if ip[d] in line:
-                        print ip[d], source
+                        print "************"
+                        print "IP {} match found under {} Feed".format(ip[d], source)
+                        print "************"
 
                     d +=1
 
