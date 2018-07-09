@@ -6,6 +6,10 @@ TIH is an intelligence tool that helps you in searching for IOCs across multiple
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&maxAge=2592000)](https://www.twitter.com/abhinavbom/)
 [![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg?maxAge=2592000)](https://github.com/abhinavbom/Threat-Intelligence-Hunter/blob/master/LICENSE)
 
+<a href="https://scan.coverity.com/projects/threat-intelligence-hunter">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/16214/badge.svg"/>
+</a>
 
 ####Summary
 TIH is an intelligence tool that helps you in searching for IOCs across multiple openly available security feeds and some well known APIs. The idea behind the tool is to facilitate searching and storing of frequently added IOCs for creating your own set of indicators.
